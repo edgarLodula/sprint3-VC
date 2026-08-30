@@ -71,13 +71,13 @@ não nameplates do fabricante) muito melhor que EasyOCR/Tesseract. Exemplos conc
 Também houve **alucinação** clara do modelo multimodal em pelo menos 2 imagens:
 
 - `placa_teste_25.jpg`: o gabarito só tem `codigo_ativo` preenchido, mas o GPT-4o "inventou"
-  `fabricante = "K2"`, `modelo = "SPARE COOK CIRC PUMP MOTOR"` e `numero_serie =
-  "0867-02-02-020-080-080-030"` — na verdade esses são fragmentos do texto descritivo da tag
-  (identificador de processo "K2" e o código de localização funcional `FL:`), não um fabricante,
-  modelo ou número de série reais. O modelo preencheu campos obrigatórios do JSON mesmo sem uma
-  correspondência semântica válida.
+  `modelo = "K2 SPARE COOK CIRC PUMP MOTOR"` e `numero_serie = "0867-02-02-020-080-080-030"` — na
+  verdade esses são fragmentos do texto descritivo da tag (identificador de processo "K2" e o
+  código de localização funcional `FL:`), não um modelo ou número de série reais. O modelo
+  preencheu campos obrigatórios do JSON mesmo sem uma correspondência semântica válida.
 - `placa_teste_29.jpg`: placa completamente ilegível (reflexo de luz cobrindo os campos), mas o
-  GPT-4o devolveu `numero_serie = "150-536"` — valor sem qualquer base visível na imagem.
+  GPT-4o devolveu `numero_serie = "150036"` **e** `potencia = "3 HP"` — dois valores inventados,
+  sem qualquer base visível na imagem.
 
 Em compensação, o modelo multimodal também foi mais **conservador** em casos ambíguos que o regex
 teria "acertado" por coincidência: em `placa_teste_27.jpg` (posicionador FIELDVUE), nenhuma das três
@@ -128,15 +128,15 @@ Tabela gerada pela Seção 10 do notebook (`acuracia_sprint3.csv`) e gráfico
 |---|---|---|
 | EasyOCR + regex | 82,7% | 0,253 |
 | Tesseract + regex | 80,0% | 0,295 |
-| GPT-4o-mini | **85,3%** | **0,240** |
+| GPT-4o-mini | **84,7%** | **0,251** |
 
 | Campo | EasyOCR | Tesseract | GPT-4o |
 |---|---|---|---|
 | codigo_ativo | 80,0% | 76,7% | **93,3%** |
-| fabricante | **80,0%** | 70,0% | 73,3% |
+| fabricante | **80,0%** | 70,0% | 76,7% |
 | modelo | 86,7% | 86,7% | **90,0%** |
 | numero_serie | **86,7%** | **86,7%** | 80,0% |
-| potencia | 80,0% | 80,0% | **90,0%** |
+| potencia | 80,0% | 80,0% | **83,3%** |
 
 **Atenção à leitura desses números:** 21 das 30 imagens têm gabarito `"N/A"` em todos os campos
 (placas ilegíveis ou fotos de conjunto do equipamento). Acertar "não há nada para ler" nesses casos
@@ -149,7 +149,7 @@ as abordagens), o quadro muda bastante:
 | codigo_ativo (8 imagens) | 25,0% (2/8) | 12,5% (1/8) | **75,0% (6/8)** |
 | fabricante (9 imagens) | 33,3% (3/9) | 0,0% (0/9) | 33,3% (3/9) |
 | modelo (4 imagens) | 0,0% (0/4) | 0,0% (0/4) | **50,0% (2/4)** |
-| numero_serie (4 imagens) | 0,0% (0/4) | 0,0% (0/4) | **75,0% (3/4)** |
+| numero_serie (4 imagens) | 0,0% (0/4) | 0,0% (0/4) | **50,0% (2/4)** |
 | potencia (6 imagens) | 0,0% (0/6) | 0,0% (0/6) | **50,0% (3/6)** |
 
 Nessa visão mais rigorosa, o GPT-4o-mini domina claramente em `codigo_ativo`, `modelo`,
@@ -160,8 +160,8 @@ esse campo depende de uma lista fixa de marcas conhecidas — ver Seção 6.
 ## 6. Análise dos resultados
 
 **Acertos.** GPT-4o-mini foi a abordagem mais consistente nos campos que exigem interpretação
-semântica: `codigo_ativo` (6/8 = 75%), `numero_serie` (3/4 = 75%) e `potencia`/`modelo` (50% cada)
-nos casos em que o gabarito tinha valor real. Em `placa_teste_20.jpg` (tag amarela grande e bem
+semântica: `codigo_ativo` (6/8 = 75%) e `modelo`/`numero_serie`/`potencia` (50% cada) nos casos em
+que o gabarito tinha valor real. Em `placa_teste_20.jpg` (tag amarela grande e bem
 iluminada) as três abordagens acertaram o `codigo_ativo`, mostrando que em boas condições de
 captura a diferença entre os métodos praticamente desaparece.
 
@@ -172,20 +172,24 @@ da Sprint 2. Esse continua sendo o maior gargalo do pipeline: quando a placa nã
 primeiro plano e em foco, nenhuma abordagem de OCR/multimodal resolve sozinha.
 
 **Erros — campo quase certo (falha de formatação, não de leitura).** Vários erros do GPT-4o foram
-por um caractere de diferença, o que a métrica de exact-match trata como erro total mas que
-teria fácil correção com normalização adicional: `"MAXIEM WATERJET"` vs. `"MAXIEM WATERJETS"`
-(plural faltando), `"Waltech"` vs. `"WAL-TECH"` (hífen removido), `"DOLL"` vs. `"DoALL"` (uma letra
-trocada no logo estilizado), `"66-M-522"` vs. `"66-M-1522"` (um dígito faltando). O CER médio do
-GPT-4o (0,240) já capta parte dessa proximidade que a acurácia binária esconde.
+por um caractere ou uma palavra de diferença, o que a métrica de exact-match trata como erro total
+mas que teria fácil correção com normalização adicional: `"Maxim Waterjets"` vs. `"MAXIEM
+WATERJETS"` (uma letra trocada no nome), `"WALTECH VALVE"` vs. `"WAL-TECH"` (hífen removido, palavra
+extra), `"DOLL"` vs. `"DoALL"` (uma letra trocada no logo estilizado), `"66-M-522"` vs.
+`"66-M-1522"` (um dígito faltando). O CER médio do GPT-4o (0,251) já capta parte dessa proximidade
+que a acurácia binária esconde — e fica próximo do CER do EasyOCR (0,253), mostrando que a distância
+entre as duas abordagens é menor do que a acurácia por campo sugere.
 
-**Erros — alucinação do modelo multimodal.** Em `placa_teste_25.jpg` o GPT-4o preencheu
-`fabricante`, `modelo` e `numero_serie` com fragmentos do texto da tag (um identificador de
-processo e um código de localização funcional) mesmo sem esses campos existirem na imagem — o
-prompt pede para usar `"N/A"` quando o campo não é visível, mas o modelo às vezes prefere
-"encontrar" algo plausível a admitir ausência. O mesmo ocorreu em `placa_teste_29.jpg`, com um
-`numero_serie` inventado numa placa totalmente ofuscada por reflexo de luz. Esse é o principal risco
-do uso de LLM multimodal em produção: diferente do regex (que só preenche um campo quando o padrão
-bate), o modelo pode alucinar com confiança.
+**Erros — alucinação do modelo multimodal.** Em `placa_teste_25.jpg` o GPT-4o preencheu `modelo` e
+`numero_serie` com fragmentos do texto da tag (um identificador de processo e um código de
+localização funcional) mesmo sem esses campos existirem na imagem — o prompt pede para usar
+`"N/A"` quando o campo não é visível, mas o modelo às vezes prefere "encontrar" algo plausível a
+admitir ausência. O caso mais claro é `placa_teste_29.jpg`: placa totalmente ofuscada por reflexo
+de luz, sem nenhum campo legível, mas o GPT-4o devolveu **dois** valores inventados —
+`numero_serie = "150036"` e `potencia = "3 HP"` — nenhum com base visível na imagem. Esse é o
+principal risco do uso de LLM multimodal em produção: diferente do regex (que só preenche um campo
+quando o padrão bate), o modelo pode alucinar com confiança, inclusive em mais de um campo na mesma
+imagem.
 
 **Limitações.**
 - O extrator por regex (EasyOCR/Tesseract) nunca preenche `modelo` — não há um padrão textual
@@ -208,7 +212,7 @@ bate), o modelo pode alucinar com confiança.
   havendo leitura parcial, para não introduzir um valor "quase certo" como verdade absoluta.
 
 **Comparação com o baseline da Sprint 2 (73,0%, 10 imagens, EasyOCR único, sem gabarito formal).**
-A acurácia média subiu para todas as três abordagens (80,0% a 85,3%) mesmo triplicando o tamanho do
+A acurácia média subiu para todas as três abordagens (80,0% a 84,7%) mesmo triplicando o tamanho do
 conjunto de teste e trocando a métrica antiga (taxa de campos com confiança ≥ 0,5, sem gabarito) por
 uma métrica formal de exact-match contra gabarito manual. Esse ganho não deve ser lido como "o OCR
 melhorou 10-12 pontos": a métrica da Sprint 2 media apenas *confiança* do OCR, não *correção* do

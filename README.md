@@ -39,7 +39,7 @@ de taxa de validade), sem gabarito formal. Esta Sprint amplia o protótipo em tr
 |---|---|---|
 | EasyOCR + regex | 82,7% | 0,253 |
 | Tesseract + regex | 80,0% | 0,295 |
-| **GPT-4o-mini** | **85,3%** | **0,240** |
+| **GPT-4o-mini** | **84,7%** | **0,251** |
 
 Esse número geral é inflado por 21 das 30 imagens terem gabarito `"N/A"` em tudo (placas ilegíveis
 ou fotos do equipamento inteiro) — acertar "não há nada pra ler" conta como acerto igual pras três
@@ -51,7 +51,7 @@ clara:
 | codigo_ativo (8 imagens) | 25,0% | 12,5% | **75,0%** |
 | fabricante (9 imagens) | 33,3% | 0,0% | 33,3% |
 | modelo (4 imagens) | 0,0% | 0,0% | **50,0%** |
-| numero_serie (4 imagens) | 0,0% | 0,0% | **75,0%** |
+| numero_serie (4 imagens) | 0,0% | 0,0% | **50,0%** |
 | potencia (6 imagens) | 0,0% | 0,0% | **50,0%** |
 
 O GPT-4o-mini domina nos campos que exigem interpretar o layout da placa, não só casar um padrão de

@@ -1,5 +1,5 @@
 imagem,easyocr_texto_bruto,tesseract_texto_bruto,easyocr_codigo_ativo,easyocr_fabricante,easyocr_modelo,easyocr_numero_serie,easyocr_potencia,tesseract_codigo_ativo,tesseract_fabricante,tesseract_modelo,tesseract_numero_serie,tesseract_potencia,gpt4o_codigo_ativo,gpt4o_fabricante,gpt4o_modelo,gpt4o_numero_serie,gpt4o_potencia
-placa_teste_01.jpg,CA,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,WAL-TACH,N/A,1004,N/A
+placa_teste_01.jpg,CA,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,WAL-TACH,N/A,N/A,N/A
 placa_teste_02.jpg,,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_03.jpg,DANGER 1 8 0 1 1,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_04.jpg,0867 10289990,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0867 10289990,N/A
@@ -12,7 +12,7 @@ placa_teste_06.jpg,"MOTOR: ""B"" E-2 LQUOR FL 0867 Compartment 04-06 MCC TRANSFE
 placa_teste_07.jpg,,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_08.jpg,IE3 9 SIEMENS 7 EEE 2 6 TEEL 1 PART 2 BEARINGS SERIAL 2 541 1 NSUL F 3 Cx 2 1 8 3 AMB Min 2 0 5 3 94.1 93.6 8 3 3 8 3 COMPA 2 3 1 LINE 1 Mexico by SIEMENS 8 1,"SUAN) (eee 2
 URINE CANS RAME: 105 :
-Ne “ae=eseToOsTIP ee",N/A,Siemens,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,SIEMENS,SD100 IE3,Q2-F8160037P1,1500 kW
+Ne “ae=eseToOsTIP ee",N/A,Siemens,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,SIEMENS,SD100 IE3,Q2-E81600371P,1500 kW
 placa_teste_09.jpg,2,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_10.jpg,,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_11.jpg,FL: 2 8 8 8 8 Agitator 1C,"MOTOR.
@@ -47,8 +47,8 @@ HP:150.00 FRAME: es .
 » FLA‘166.0 -—RPM:1785, sake
 
 *0867-04-02-019-020-01 0-080",62-M-5018,N/A,N/A,N/A,5018 HP,N/A,N/A,N/A,N/A,N/A,62-M-5018,N/A,N/A,N/A,150 HP
-placa_teste_14.jpg,Mont 656 8 15 7.5 2 44 5 E 219T 5 2 5 6 8,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,5KS213T3P331D9,N/A,7.5 HP
-placa_teste_15.jpg,0867 10289324,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Ø867 10289324,N/A
+placa_teste_14.jpg,Mont 656 8 15 7.5 2 44 5 E 219T 5 2 5 6 8,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,5KS213TP3311D9,N/A,7.5 HP
+placa_teste_15.jpg,0867 10289324,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,10289324,N/A
 placa_teste_16.jpg,1 66-M 3 3 Li MCC partment Jon FRAME 1 3 Clarifier 6 8 522 2 1 6 Rake 2 8,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,66-M-522,N/A,N/A,N/A,2.20 kW
 placa_teste_17.jpg,3 A,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,IS-80,N/A
 placa_teste_18.jpg,,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
@@ -73,11 +73,11 @@ LARGEST CONTROLLED MOTOR",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,NUMBER,N/A,N/A,DOLL,20
 placa_teste_22.jpg,member 0f I 1 1515 M15155159 KENT HA 3,"wcumewrvers [M45155159)
 xenwausa —19T95159_
 
-S SESS 6",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,MAXIEM WATERJET,1515,M15155159,N/A
+S SESS 6",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Maxim Waterjets,1515,M151515159,N/A
 placa_teste_23.jpg,8 1 1 3 4 2 1,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_24.jpg,027-207218 1,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,027-ZSO-7218,N/A,N/A,N/A,N/A
 placa_teste_25.jpg,24-1342 K2 SPARE COOK CIRC PUMP MOTOR 0867-02-02-020-080-080-030 CUBICLE 8,"-020-080-080-030
-CUBICLE -#120 ~",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,24-1342,K2,SPARE COOK CIRC PUMP MOTOR,0867-02-02-020-080-080-030,N/A
+CUBICLE -#120 ~",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,24-1342,N/A,K2 SPARE COOK CIRC PUMP MOTOR,0867-02-02-020-080-080-030,N/A
 placa_teste_26.jpg,3,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
 placa_teste_27.jpg,5 21- 0420 2 2 1 SHOWER [ 1 1 DILUTION SCREEN NO 1 8,"QaAcFY-0125
 FLONVANE POSITIONS
@@ -85,7 +85,7 @@ FLONVANE POSITIONS
 
 ur HOT STO!
 SHOWER LUTON",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-placa_teste_28.jpg,WAL-TECH R PAIRED 6 4 DATE 284 5 8 CDTP TYPE 8 BD,,N/A,Wal-Tech,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,WAL-TECH,N/A,N/A,N/A
+placa_teste_28.jpg,WAL-TECH R PAIRED 6 4 DATE 284 5 8 CDTP TYPE 8 BD,,N/A,Wal-Tech,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,WAL-TECH,N/A,N/A,3992 LBS/HR
 placa_teste_29.jpg,DUT ' TFPE 6 4 9 3 3 8 END 8 03 6 3,"ee Seer ecg
 
 ¢
@@ -93,5 +93,5 @@ placa_teste_29.jpg,DUT ' TFPE 6 4 9 3 3 8 END 8 03 6 3,"ee Seer ecg
 Ny pete oa
 
 { DENGR:
-pale",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,150-536,N/A
-placa_teste_30.jpg,8 2 LVL VAL GRN 1 8 600 WA ISd TRWEST,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,Waltech,N/A,N/A,N/A
+pale",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,150036,3 HP
+placa_teste_30.jpg,8 2 LVL VAL GRN 1 8 600 WA ISd TRWEST,,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,WALTECH VALVE,N/A,N/A,N/A
