@@ -1,0 +1,18 @@
+# Sprint 3 - dependencias Python (protótipo multiabordagem de leitura de placas)
+# Instalar com: venv\Scripts\python.exe -m pip install -r requirements.txt
+#
+# ATENÇÃO: o Tesseract OCR é um binário do sistema operacional, não é instalado via pip.
+# pytesseract só funciona depois de instalar o Tesseract separadamente:
+#   Windows -> https://github.com/UB-Mannheim/tesseract/wiki (instalador .exe)
+#   depois configurar no notebook: pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+numpy
+pandas
+matplotlib
+pillow
+opencv-python
+datasets
+easyocr
+pytesseract
+openai
+python-dotenv

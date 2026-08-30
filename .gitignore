@@ -1,0 +1,5 @@
+.env
+venv/
+imagens_teste_originais/
+imagens_teste_padronizadas/
+imagens_preview/

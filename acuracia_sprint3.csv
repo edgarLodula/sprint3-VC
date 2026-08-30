@@ -1,0 +1,16 @@
+abordagem,campo,acuracia
+easyocr,codigo_ativo,0.8
+easyocr,fabricante,0.8
+easyocr,modelo,0.8666666666666667
+easyocr,numero_serie,0.8666666666666667
+easyocr,potencia,0.8
+tesseract,codigo_ativo,0.7666666666666667
+tesseract,fabricante,0.7
+tesseract,modelo,0.8666666666666667
+tesseract,numero_serie,0.8666666666666667
+tesseract,potencia,0.8
+gpt4o,codigo_ativo,0.9333333333333333
+gpt4o,fabricante,0.7333333333333333
+gpt4o,modelo,0.9
+gpt4o,numero_serie,0.8
+gpt4o,potencia,0.9
